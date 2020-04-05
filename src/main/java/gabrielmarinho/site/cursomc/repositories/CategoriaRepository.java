@@ -1,5 +1,13 @@
 package gabrielmarinho.site.cursomc.repositories;
 
-public class CategoriaRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
+import gabrielmarinho.site.cursomc.domain.Categoria;
+
+@Repository
+public interface CategoriaRepository extends JpaRepository<Categoria, Integer> {
+
+	
+	
 }
