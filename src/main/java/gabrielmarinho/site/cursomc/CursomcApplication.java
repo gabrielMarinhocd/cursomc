@@ -29,19 +29,19 @@ public class CursomcApplication implements CommandLineRunner {
 
 	@Autowired
 	private ProdutoRepository produtoRepository;
-	
+
 	@Autowired
 	private EstadoRepository estadoRepository;
-	
-	@Autowired 
+
+	@Autowired
 	private CidadeRepository cidadeRepository;
 
 	@Autowired
 	private ClienteRepository clienteRepository;
-	
+
 	@Autowired
-	private EnderecoRepository	enderecoRepository;
-	
+	private EnderecoRepository enderecoRepository;
+ 
 	public static void main(String[] args) {
 		SpringApplication.run(CursomcApplication.class, args);
 	}
@@ -75,21 +75,22 @@ public class CursomcApplication implements CommandLineRunner {
 
 		est1.getCidades().addAll(Arrays.asList(c1));
 		est1.getCidades().addAll(Arrays.asList(c2, c3));
-		
-		estadoRepository.saveAll(Arrays.asList(est1,est2));
-		cidadeRepository.saveAll(Arrays.asList(c1,c2,c3));
-	
-		Cliente cli1 = new Cliente(null, "Gabriel Marinho", "gabrielmarinho@gmail.com", "076.708211.75",TipoCliente.PESSOAFISICA);
+
+		estadoRepository.saveAll(Arrays.asList(est1, est2));
+		cidadeRepository.saveAll(Arrays.asList(c1, c2, c3));
+
+		Cliente cli1 = new Cliente(null, "Gabriel Marinho", "gabrielmarinho@gmail.com", "076.708211.75",
+				TipoCliente.PESSOAFISICA);
 		cli1.getTelefones().addAll(Arrays.asList("91193027", "93672608"));
-		
+
 		Endereco e1 = new Endereco(null, "Rua Flores", "300", "Apto 303", "Jardim", "38220834", cli1, c1);
 		Endereco e2 = new Endereco(null, "Avenida Matos", "105", "Sala 800", "Centro", "38777012", cli1, c2);
-		
-		cli1.getEndereco().addAll(Arrays.asList(e1,e2));
-		
+
+		cli1.getEndereco().addAll(Arrays.asList(e1, e2));
+
 		clienteRepository.saveAll(Arrays.asList(cli1));
-		enderecoRepository.saveAll(Arrays.asList(e1,e2));
-		
+		enderecoRepository.saveAll(Arrays.asList(e1, e2));
+
 	}
 
 }
