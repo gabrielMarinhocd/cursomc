@@ -20,7 +20,7 @@ public class ValidationError extends StandardError {
 
 
 	public void addError(String fildName, String messagem) {
-		list.add(new FildMessage(fildName, messagem));
+		errors.add(new FildMessage(fildName, messagem));
 	}
 
 	
