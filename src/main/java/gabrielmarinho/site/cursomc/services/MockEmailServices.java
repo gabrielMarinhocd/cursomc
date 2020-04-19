@@ -1,19 +1,28 @@
 package gabrielmarinho.site.cursomc.services;
 
+import javax.mail.internet.MimeMessage;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.mail.SimpleMailMessage;
 
 public class MockEmailServices extends AbstractEmailService {
 	
-	private static final Logger Log = LoggerFactory.getLogger(MockEmailServices.class);
+	private static final Logger LOG = LoggerFactory.getLogger(MockEmailServices.class);
 	
 	@Override
 	public void sendEmail(SimpleMailMessage msg) {
-		Log.info("Simulando envio de email...");
-		Log.info(msg.toString());
-		Log.info("Email enviado");
+		LOG.info("Simulando envio de email...");
+		LOG.info(msg.toString());
+		LOG.info("Email enviado");
 		
 	}
 
+	@Override
+	public void sendHtmlEmail(MimeMessage msg) {
+		LOG.info("Simulando envio de email HTML...");
+		LOG.info(msg.toString());
+		LOG.info("Email enviado");
+	}
+	
 }
