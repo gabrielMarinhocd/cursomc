@@ -11,7 +11,6 @@ import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 
 import gabrielmarinho.site.cursomc.domain.Categoria;
-import gabrielmarinho.site.cursomc.domain.Cliente;
 import gabrielmarinho.site.cursomc.dto.CategoriaDTO;
 import gabrielmarinho.site.cursomc.repositories.CategoriaRepository;
 import gabrielmarinho.site.cursomc.services.exeptions.DataIntegrityExeption;
